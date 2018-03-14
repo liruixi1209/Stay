@@ -1,0 +1,36 @@
+.bgf7{background: #fff;min-width: 1200px;float: left;width: 100%;}
+.login_box{  padding-top: 88px;  height: 713px;  padding-bottom: 85px;  width: 850px;  margin:0 auto;  }
+.login_content{  width:630px;  height:540px;  background-color:#f5f5f5;  margin:0 auto;  position: relative;  border-radius: 15px;  }
+.login_content h1{  font-size: 26px;  color: #363636;  padding: 45px 0px 10px 260px;  }
+.link_box{  margin: 0 150px;  text-align: center;  }
+.aclick{  display: inline-block;  width: 60px;  height: 65px;  margin: 0 9px;  background: url('../image/loginImg/log3_fox%20(1).png') no-repeat;  margin-top: 18px;  }
+.link_box p{}
+.a1{background-position: 0 0;  }
+.a2{background-position: 0 -75px;}
+.a3{background-position: 0 -154px;}
+.a4{background-position: 0 -238px;  }
+.a1:hover{background-position:-73px 0;}
+.a2:hover{background-position:-73px -75px;}
+.a3:hover{background-position:-73px -154px;  }
+.a4:hover{  background-position:-73px -238px;}
+.huo{  width: 293px;  height: 28px;  background: url('../image/loginImg/huo.png') no-repeat;  margin: 20px 0px 0px 167px;}
+.mail .log1{position: relative;margin-bottom: 9px;}
+.mail .log2{position: relative;margin-bottom: 9px;}
+.mail{background: #f5f5f5;height: 196px;padding-left: 0px;overflow: hidden;margin: 30px 0px 0px 172px;}
+.ico1{width: 17px;height: 12px;background: url(../image/loginImg/log_ico.png) no-repeat;display: inline-block;position: absolute;
+    left: 12px;top: 11px;}
+.mail .error{  display: none;  font-size: 13px;  color: #ff6e68;  position: absolute;  top: 8px; left: 45px;  }
+.mail .errorImg{display: none; width: 18px;height: 19px;background: url(../image/loginImg/log_ico.png) 0px -41px;  position: absolute;  left: 260px;  top: 8px;  }
+.pwderror{border: 1px solid #ff6e68;}
+.mail .text{width: 245px;padding-left: 40px;height: 32px;border: 1px solid #dcdcdc;background: #fff;border-radius: 5px;}
+.ico2{width: 17px;height: 18px;background: url(../image/loginImg/log_ico.png) 0px -17px no-repeat;display: inline-block;
+    position: absolute;left: 12px;top: 8px;}
+.mail .note{font-size: 13px;color: #a1a1a1;position: absolute;top: 8px;left: 45px;}
+.mail .logBtn{background: #fcb616;color: #fff;font-size: 14px;text-shadow: 1px 1px 1px #ad3c25;width: 288px;height: 32px;
+    line-height: 25px;border: 1px solid #dba658;border-radius: 5px;font-weight: bold;cursor: pointer;}
+.log3{color: #555;margin-top: 12px;font-size: 12px;}
+.log3 input{position: relative;top: 2px;margin-left: 2px;}
+.mail .log3 a{margin-left: 173px;color: #555;}
+.goZuce{position: absolute;bottom: 30px;right: 40px;font-size: 12px;}
+.goZuce a{color: #50c8d7;text-decoration: none;}
+.colWarning{color:#ff6e68;text-align: center;display: block;width: 287px;}

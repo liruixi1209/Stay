@@ -1,0 +1,236 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="bodyBg3">
+    <div class="bodyBg3_inner">
+        <div class="bodyBg3_content clear">
+            <div class="fl status_left">
+                <!-- 左边第一部分-->
+                <div class="fl status_left1">
+                    <div class="fl release">
+                        <div class="status_left1_nav">
+                            <a href="#" class="fl"><img src="../../public/image/status/touxiang1.png" class="headImag"></a>
+                            <h3 class="fl"><span class="s_tit"></span> </h3>
+                        </div>
+                        <div class="postingBox">
+                            <textarea class="textarea status1" placeholder="分享现在的状态..."></textarea>
+                            <input type="submit" value="发布" class="btn1 fr">
+                        </div>
+
+                        <div class="postingBox2">
+                            <form  action="/statusShow" method="post" enctype="multipart/form-data">
+                                <div class="textareaBox">
+                                    <textarea class="textarea1 status3" name="textarea1" placeholder="此时此刻，你在如何待着？①待着鼓励你：记录自己美好生活的片刻；②分享新发现，告诉大家好好待着的方法。③待着不欢迎：广告、违法内容、与“待着生活方式”无关的内容。"></textarea>
+                                </div>
+                                <span class="photo z_indexClick" id="photograph1"><!-- photo_hov -->
+                                    <span id="statusPhoto"><i id="ac3"></i>照片</span>
+                                        <input type="file" class="file" name="statusPhoto"  multiple="multiple" onchange="uploadImage(this)">
+                                        <input type="hidden" name="srcAll" class="srcAll" value="">
+                                </span>
+                                 <a href="#" class="videoA topic"><i class="video"></i>视频 </a>
+                                <div class="photoImg jQz-index" id="imgPreviewBox">
+                                    <div class="photo_addImg">
+
+                                        <input type="file" class="file" name="statusPhoto"  multiple="multiple"  onchange="uploadImage(this)">
+                                        <input type="hidden" name="srcAll" class="srcAll" value="">
+
+                                    </div>
+                                    <div class="photo_number">共<i class="all">0</i>张，还可上传<i class="surplus">6</i>张</div>
+                                </div>
+                                <div class="tagsFrame">
+                                    <div class="tagsTextarea">
+                                        <lable class="zTags">多个标签用空格分隔，最多3个</lable>
+                                        <input type="text" maxlength="20" style="width:200px;" class="tagInput" name="tagInput">
+                                    </div>
+                                </div>
+                                <input type="submit" value="发布" class="btn1 fr">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 左边第二部分-->
+                <div class="fl status_left2">
+                    <div class="fl status_left2_inner">
+                        <div class="fl allStatusTil">
+                            <a href="#" class="fl">随便看看</a>
+                            <a href="#" class="fl">好友状态</a>
+                        </div>
+                        <div class="fl comentTag">
+                            <a href="#" class="fl current">最新</a>
+                            <a href="#" class="fl">热门</a>
+                        </div>
+                        <div class="fl publishStatusLists">
+                            {%for content in contents%}
+                            <div class="listBox">
+                                <div class="fl publishStatusList">
+                                    <div class="publishStatusList_title">
+                                        <div class="fl">
+                                            <div class="fl leftheadImage">
+                                                <a href="#" class="headImg_A"><img src="{{content.imgHead}}" class="headImg"></a>
+                                                <!-- 个人信息浮动框-->
+                                                <div class="modle_imgfloat">
+                                                    <span class="f_san"></span>
+                                                    <h4>
+                                                        <a href="#" target="_blank" class="name">{{content.uname}}</a>
+                                                        <a class="model_title model_t2 communityTitle" href="#" target="_blank">
+                                                            <i class="showName" style="display: none;">
+                                                                <span class="name">体验官：你的艺术家第一课：亲手刻个橡皮章</span>
+                                                                <span class="g_san"></span>
+                                                            </i>
+                                                        </a>
+                                                    </h4>
+                                                    <p>{{content.sign}}</p>
+
+                                                    <div class="likeMe">
+                                                        <a href="#" class="attented">
+                                                            <i></i>
+                                                            已关注
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="fr">
+                                                <a href="#" target="_blank" class="name">{{content.uname}}</a>
+                                                <a class="model_title model_t2 communityTitle" href="#" target="_blank">
+                                                    <i class="showName" style="display: none;">
+                                                        <span class="name">体验官：你的艺术家第一课：亲手刻个橡皮章</span>
+                                                        <span class="g_san"></span>
+                                                    </i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <span class="fr time">{{content.sp_dateTime}}</span>
+                                        <div class="fr coment_txt">
+                                            <p>{{content.sp_contents}}</p>
+                                            {%if content.img1!=null%}
+                                            <img src="{{content.img1}}" style="width: 100px;height: 100px">
+                                            {%endif%}
+
+                                        </div>
+                                        <div class="fl bom_box">
+                                            <div class="fr icos">
+                                                <!--点赞-->
+                                            <span class="i2">
+									            <i class="heart {%if arrFlag[loop.index0+Index]==0%}jx_cancelHeart{%else%} jx_giveHeart{%endif%}" id="statusFavorCnt_{{content.sid}}"  data-status_id="{{content.sid}}"></i>
+									            <em class="jx_iLike" style="cursor:default;">{{content.sp_favorComments}}</em>
+								            </span>
+                                                <!--评论-->
+                                            <span class="i3 jx_comment Review" data-relate_id="{{content.sid}}">
+									            <i></i>
+                                                <em>{{content.sp_commentCounts}}</em>
+
+
+								            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="model_comments" id="commentBox_9_75919">
+                                    <span class="model_san"></span>
+                                    <div class="clear inputTxt">
+                                        <textarea class="w_input fl" id="commentContent_9_75919"></textarea>
+                                        <input type="hidden" id="commentReplyHead_9_75919" value="">
+                                        <input type="hidden" id="commentFid_9_75919" value="">
+                                        <input type="button" class="fl txtBtn commentSubmit" value="发布" id="commentSubmit_" data-comment_type="9" data-relate_id="{{content.sid}}">
+                                    </div>
+
+                                    <ul class="com_list clear" id="commentListBox_9_75919">
+                                    </ul>
+
+                                    <div class="moreMeg cBlue" id="commentBtnMore_9_75919"></div>
+                                    <!-- <div class="shou putAway"><i></i></div>-->
+                                </div>
+                            </div>
+
+                            {%endfor%}
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="fl pages">
+                    <div class="fl pagesInner">
+
+                        <a href="/status?page=1" class=" page first"><<</a>
+                        <a href="/status?page={{page-1}}" class="page previous"><</a>
+
+                        <span style="margin: 0 150px">{{page}}/{{pages}}</span>
+                        <a href="/status?page={{page+1}}" class="page next">></a>
+                        <a href="/status?page={{pages}}" class="page last">>></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="fr status_right">
+                <div class="fl status_rightInner">
+                    <div class="fl status_rightUp">
+                        <p class="status_rightTil">热门话题</p>
+                        <div class="fl hotTags">
+                            <a href="#" class="fl hotTag">待着</a>
+                            <a href="#" class="fl hotTag">生活</a>
+                            <a href="#" class="fl hotTag">乐观</a>
+                            <a href="#" class="fl hotTag">体验陌生人的每一天</a>
+                            <a href="#" class="fl hotTag">摄影</a>
+                            <a href="#" class="fl hotTag">旅行</a>
+                            <a href="#" class="fl hotTag">每日一句</a>
+                        </div>
+
+                    </div>
+
+                    <div class="fl status_rightDown">
+                        <p class="status_rightTil">活跃用户</p>
+                        <div class="fl hotUsers">
+                            <ul class="">
+                                <li class="right_headImg">
+                                    <a href="#" class="headImg_A fl"><img src="../../public/image/status/touxiang1.png" class="headImg"></a>
+                                    <!-- 个人信息浮动框-->
+                                    <div class="modle_imgfloat">
+                                        <span class="f_san"></span>
+                                        <h4>
+                                            <a href="#" target="_blank" class="name">kkm</a>
+                                            <a class="model_title model_t2 communityTitle" href="#" target="_blank">
+                                                <i class="showName" style="display: none;">
+                                                    <span class="name">体验官：你的艺术家第一课：亲手刻个橡皮章</span>
+                                                    <span class="g_san"></span>
+                                                </i>
+                                            </a>
+                                        </h4>
+                                        <p>如果能忘掉渴望 岁月长 衣裳薄</p>
+                                        <div class="likeMe">
+                                            <a href="#" class="attented">
+                                                <i></i>
+                                                已关注
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="fl nameBox">
+                                        <a href="#" target="_blank" class="name0">kkm</a>
+                                        <a class="model_title model_t2 communityTitle" href="#" target="_blank">
+                                            <i class="showName" style="display: none;">
+                                                <span class="name">体验官：你的艺术家第一课：亲手刻个橡皮章</span>
+                                                <span class="g_san"></span>
+                                            </i>
+                                        </a>
+                                        <div class="sign">解答呆萌的任何疑问</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+</script>
+{%endblock%}

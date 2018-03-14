@@ -1,0 +1,156 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="personalFile_Bg">
+    <div class="personalFile_inner clear">
+        <div class="fl per_set">
+            <h3 class="setTitle">
+                <i class="icons"></i>
+                个人设置
+            </h3>
+            <div class="basic_data">
+                <div class="base_til">
+                    <a href="personalSet?uid={{userInfo.uid}}" class="current">基本资料</a>
+                    <i></i>
+                    <a href="/modifyPassword">修改密码</a>
+                    <i></i>
+                    <a href="#">账号绑定</a>
+                    <i></i>
+                </div>
+
+                <form action="/personalSet" method="post" enctype="multipart/form-data">
+
+                <div class="data_info" id="form_box">
+                    <dl>
+                        <dt>UID：</dt>
+                        <dd>
+							<span class="c">
+								<input type="text" class="pre_setInp dataInp" value="{{userInfo.uid}}" name="uid" disabled="disabled" style="background: #FBFBFC; border: 1px solid #FBFBFC;">
+							</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>手机：</dt>
+                        <dd>
+							<span class="c">
+								<span class="note">请填写你的手机号码</span>
+								<input type="text" class="pre_setInp dataInp" name="telephone" id="telephone" data-key="telephone" value="{{userInfo.tel}}" >
+								<span class="tip yes"><span class="icon"></span></span>
+								<span class="tip error"><span class="icon"></span><span class="errorMessage"></span> </span>
+							</span>
+                        </dd>
+                    </dl>
+                    <script>
+
+                    </script>
+                    <dl>
+                        <dt>邮箱：</dt>
+                        <dd>
+							<span class="c">
+								<span class="note">请填写你的邮箱地址</span>
+								<input type="text" class="pre_setInp dataInp" name="Email" id="Email" data-key="Email" value="{{userInfo.email}}">
+								<span class="tip yes" style="display: none;"><span class="icon"></span></span>
+								<span class="tip error" style="display: none;"><span class="icon"></span><span class="errorMessage"></span> </span>
+							</span>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>昵称：</dt>
+                        <dd>
+							<span class="c">
+								<span class="note">怎么称呼您</span>
+								<input type="text" class="pre_setInp dataInp" name="user_name" id="user_name" data-key="user_name" value="{{userInfo.uname}}" >
+								<span class="tip yes" style="display: none;"><span class="icon"></span></span>
+								<span class="tip error" style="display: none;"><span class="icon"></span><span class="errorMessage"></span></span>
+							</span>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>头像：</dt>
+                        <dd>
+                            <div class="headImg clear">
+                                <input type="hidden" id="avatar" name="avatar" value="">
+                                <img src="{{userInfo.imgHead}}" class="fl face" id="show_photo" >
+                                <div class="fr fileBtn">
+                                    <iframe id="iframe_photo" name="iframe_photo" src="" width="0" height="0" style="display:none;"></iframe>
+
+                                        <input type="hidden" name="ajax" value="upload">
+										<span class="file" id="btn_upload">
+											<input type="file" id="photoToUpload" name="photo" style="width: 92px;" onchange="getImage(this)">
+										</span>
+                                        <div class="file_info">
+                                            <div class="p2" id="show_file">支持jpg,gif,png格式，建议尺寸大于100*100。</div>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+
+
+                    <dl>
+                        <dt>性别：</dt>
+                        <dd>
+                            <div class="sex">
+
+								<span>
+									<label for="gender_1">
+                                        <input type="radio" name="gender_radio" id="gender_1" value="1" {%if userInfo.sex==1%}checked{%endif%}> 男
+                                    </label>
+								</span>
+								<span>
+									<label for="gender_0">
+                                        <input type="radio" name="gender_radio" id="gender_0" value="0" {%if userInfo.sex==0%}checked{%endif%}> 女
+                                    </label>
+								</span>
+                                <input type="hidden" id="gender" data-key="gender" value="0">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>出生日期：</dt>
+                        <dd>
+							<span class="c">
+								<!-- <span class="note">您多大了</span> -->
+								<select class="pre_setInp selInp" name="birth_year" id="birth_year"><option value="{%if userInfo.birthYear==''%}请选择{%else%}{{userInfo.birthYear}}{%endif%}">{%if userInfo.birthYear==''%}请选择{%else%}{{userInfo.birthYear}}{%endif%}</option></select>
+                                <select class="pre_setInp selInp" name="birth_month" id="birth_month" data-key="birth_month"><option value="{%if userInfo.birthMonth==''%}请选择{%else%}{{userInfo.birthMonth}}{%endif%}">{%if userInfo.birthMonth==''%}请选择{%else%}{{userInfo.birthMonth}}{%endif%}</option></select>
+                                <select class="pre_setInp selInp" name="birth_day" id="birth_day" data-key="birth_day"><option value="{%if userInfo.birthday==''%}请选择{%else%}{{userInfo.birthday}}{%endif%}">{%if userInfo.birthday==''%}请选择{%else%}{{userInfo.birthday}}{%endif%}</option></select>
+                                <input type="hidden" id="age" data-key="age" value="">
+                               <!-- <span class="tip yes"><span class="icon"></span></span>
+                                <span class="tip error"><span class="icon"></span></span>-->
+							</span>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>职业：</dt>
+                        <dd>
+							<span class="c">
+								<span class="note">您是做什么工作的呢</span>
+								<input type="text" class="pre_setInp dataInp colorl" id="job" data-key="job" name="job" value="{{userInfo.job}}">
+								<span class="tip yes"><span class="icon" style="display: none;"></span></span>
+								<span class="tip error"><span class="icon" style="display: none;"></span></span>
+							</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>个人签名：</dt>
+                        <dd>
+							<span class="c">
+								<span class="note">写下您对待着的想法，最多25个字符</span>
+								<input type="text" class="pre_setInp dataInp colorl inpWid" id="signature" name="signature" class="signature" data-key="signature" value="{{userInfo.sign}}" style="width:350px;">
+								<span class="tip yes"><span class="icon" style="display: none;"></span></span>
+								<span class="tip error"><span class="icon" style="display: none;"></span></span>
+							</span>
+                        </dd>
+                    </dl>
+
+                    <input type="submit" value="" class="per_submit">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+{%endblock%}

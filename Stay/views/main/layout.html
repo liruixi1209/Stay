@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待着，只有少数人才懂</title>
+
+    <link href="../../public/css/main_xjq.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/css/register.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/css/index.css" type="text/css" rel="stylesheet"/><!--Index样式-->
+    <link href="../../public/css/personalFile.css" type="text/css" rel="stylesheet"/><!--个人设置样式-->
+    <link href="../../public/css/login.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/css/status.css" type="text/css" rel="stylesheet"/><!--状态样式-->
+    <link href="../../public/css/comment.css" type="text/css" rel="stylesheet"/><!--公共的样式-->
+    <link href="../../public/css/peraonalPage.css" type="text/css" rel="stylesheet"/><!--个人主页样式-->
+    <link href="../../public/css/modifyPassword.css" type="text/css" rel="stylesheet"/><!--修改密码样式-->
+    <script src="/public/js/jquery-1.12.4.min.js"></script>
+    <script src="/public/js/jquery.cookie.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/L_index.js"></script><!--李睿希的js-->
+    <script src="/public/js/L_index2.js"></script><!--李睿希的js-->
+    <script src="/public/js/uploadImages.js"></script>
+    <script src="/public/kindeditor/kindeditor-all-min.js"></script>
+    <script src="/public/kindeditor/lang/zh-CN.js"></script>
+</head>
+<body>
+<!--导航栏-->
+<div  class="header">
+    <div class="h_left">
+        <a href="/">
+            <div class="logo"></div>
+        </a>
+        <ul class="nav">
+            <li><a href="/" class="navOn" >首页</a></li>
+          <!--  <li><a href="#" >体验</a></li>-->
+            <li><a href="/share" >社区</a></li>
+            <li><a href="/status" >状态</a></li>
+          <!--  <li><a href="#" >待法</a></li>
+            <li class="client" >
+                <a href="#">
+                    待着客户端
+                    <span class="client_New">New</span>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+    <div class="search_box">
+        <div class="search_frame fl">
+            <form action="/search" method="GET" onsubmit="return checkHeadSearch();">
+                <!--<span class="note">Search</span>-->
+                <div class="search_frameLeft">
+                    <input type="text" class=" sear" placeholder="Search" name="k" value="">
+                </div>
+                <input type="button" class="searBtn" value="" id="search_in">
+            </form>
+        </div>
+        {% if userInfo.uid %}
+        <div class="user_box2 fl" id="head_user_islogin" >
+            <div class="fl headImg">
+                <a href="/personalpage" title="{{userInfo.uname}}">
+                    <img src="/{{userInfo.imgHead}}">
+                </a>
+            </div>
+            <div class="fl headName">
+                <a href="/personalpage?uid={{userInfo.uid}}" title="{{userInfo.uname}}">
+                    <span id="head-login_name">{{userInfo.uname}}</span>
+                    <span class="message_t" id="head-notice_all_cnt1" style="display:none;">0</span>
+                    <i></i>
+                </a>
+            </div>
+            <div class="user_more">
+                <span class="message" id="head-notice_all_cnt2" style="display:none;">0</span>
+                <ul>
+                    <li class="li_4"><a href="/personalpage?uid={{userInfo.uid}}"><i class="cen"></i>个人主页</a></li>
+<!--
+                    <li class="li_1"><a href="/notification" id="head_notice_link"><i class="new"></i>消息中心</a></li>
+
+                    <li class="li_5"><a href="/user/206221/apply" id="head_apply_link"><i class="ord"></i>我的体验</a></li>
+                    -->{% if userInfo.isAdmin==2 %}
+                    <li class="li_2"><a href="/personalSet?uid={{userInfo.uid}}"><i class="man"></i>个人设置</a></li>
+                    {%else%}
+                    <li class="li_1"><a href="/admin" id="Hcenter"><i class="new"></i>管理中心</a></li>
+                    {%endif%}
+                    <li class="li_3"><a href="/logout"><i class="out"></i>退出</a></li>
+                </ul>
+            </div>
+        </div>
+        {% else %}
+        <div class="user_box fl ">
+            <a href="/login" class="fl login">登录</a>
+            <div class="search_line fl"></div>
+            <a href="/register" class="fl regis">注册</a>
+        </div>
+        {% endif %}
+        <a href="#" class="weilaunch_exper launch_exper">发起体验</a>
+    </div>
+</div>
+{%block content%}
+{%endblock%}
+<div class="footer">
+    <ul>
+        <li>
+            <h5>关于我们<br><em>ABOUT US</em></h5>
+            <p><a href="#">关于待着</a></p>
+            <p><a href="#">加入我们</a></p>
+            <p><a href="#">联系我们</a></p>
+            <p><a href="#">媒体报道</a></p>
+            <p><a href="#">商业合作</a></p>
+            <p><a href="#">Cooperation</a></p>
+        </li>
+
+        <li>
+            <h5>帮助中心<br><em>HELP</em></h5>
+            <p><a href="#">宛转待着</a></p>
+            <p><a href="#">建议反馈</a></p>
+            <p><a href="#">正清认证</a></p>
+        </li>
+
+        <li>
+            <h5>关于体验<br><em>EXPERIENCE</em></h5>
+            <p><a href="#">为何免费</a></p>
+            <p><a href="#">是否有黑幕</a></p>
+            <p><a href="#">和为体验官</a></p>
+            <p><a href="#">体验官如何</a></p>
+            <p><a href="#">活动视频</a></p>
+        </li>
+
+        <li>
+            <h5>网站条款<br><em>SITE TERMS</em></h5>
+            <p><a href="#">会员条款</a></p>
+            <p><a href="#">版权声明</a></p>
+        </li>
+
+        <li class="last">
+            <a href="#" class="sina">待着微博</a>
+            <a href="#" class="weixin">待着公众微信</a>
+            <img src="../../public/image/footer/daizhe_code_n.png" alt="" width="98" height="98">
+        </li>
+    </ul>
+    <p class="copyright">copyright 2014 daizhe.cn  All rights reserved 京ICP备10215719号-5</p>
+</div>
+<script>
+    var lis=document.getElementsByClassName("nav")[0].getElementsByTagName("a");
+    for(var i=0;i<lis.length;i++){
+        (function(i){
+            lis[i].onclick = function(){
+                change(i)
+            }
+        })(i);
+    }
+    function changeColor(x){
+        for(var i=0;i<lis.length;i++){
+            if(i==x){
+                lis[i].setAttribute('className',"navOn");
+            }else{
+                lis[i].setAttribute('className'," ");
+            }
+        }
+    }
+</script>
+</body>

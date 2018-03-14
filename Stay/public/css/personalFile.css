@@ -1,0 +1,41 @@
+.personalFile_Bg{  background: #ededef;  min-width: 1150px;  }
+.personalFile_inner{width: 1000px;  margin: 0px auto;}
+.per_set{border: 1px solid #dfdfe0;width: 733px;background: #fff;margin: 48px 0px 107px 0px; box-shadow: 1px 1px 2px #dfdfe0;}
+.per_set .setTitle{border-bottom: 1px solid #eeeeef;margin: 22px 1px 0px 1px;color: #2f2f2f;  font-size: 18px;  padding: 0px 0px 8px 24px;}
+.per_set .setTitle .icons{ background:url(../image/personalFile/icoPng.png) 0px -203px no-repeat; display:inline-block; width:33px; height:22px; position:relative; top:4px; padding-right:11px;}
+.basic_data .base_til{color: #464646;  font-size: 14px;  padding: 26px 0px 30px 62px;}
+.basic_data .base_til .current{color: #50c8d7;  border-bottom: 2px solid #50c8d7;}
+.base_til a{color: #464646;}
+.base_til  i{color: #e2e2e3;  background: #e2e2e3;  position: relative;  top: 3px;  margin: 0px 20px;  width: 1px;  height: 14px;  display: inline-block;}
+.basic_data .data_info{ color: #464646; font-size: 13px; padding-bottom: 66px;}
+.data_info dl{    overflow: hidden;  margin-left: 36px;}
+.data_info dt{float: left;  width: 65px;  text-align: right;  padding-top: 5px; font-weight: normal;}
+.data_info dd{    float: left; padding: 0px 0px 11px 41px;  position: relative;}
+.data_info dd .c { display:inline-block;vertical-align:top;position:relative; font-size:12px;}
+.data_info dd .c .tip{    vertical-align: top;font-size: 14px;padding-top: 7px;margin-left: 17px;/*display: none;*/}
+.data_info dd .c .error{font-size: 12px;color: #EA6060;margin-right: 20px;display: none}
+.data_info dd .c .yes{display: none}
+.data_info dd .note { position:absolute;left:8px;top:0;line-height:32px;font-size:12px;color:#9ca1a3;}
+.data_info dd .c .pre_setInp{width: 210px;  height: 28px;  line-height: 28px;  border-radius: 4px;  background: url(../image/personalFile/icoPng.png) #f3f3f3 0px -228px repeat-x;  border: 1px solid #f3f3f3;  color: #707070;  font-size: 12px;  padding-left: 6px;  box-shadow: -1px -1px 2px #f3f3f3 inset;}
+.basic_data .data_info .dataInp{width: 246px;}
+.data_info dd .tip .icon{background: url('../image/personalFile/icon_bg.png') no-repeat scroll left -141px transparent;display: inline-block;height: 25px;width: 26px;vertical-align: top;margin-right:4px;margin-top: -4px;}
+.data_info dd .error .icon{ background-position:left -176px;}
+.basic_data .data_info dd .headImg{ padding:15px 0; }
+.basic_data .data_info dd .headImg .face{ width:100px; height:100px; border-radius:100px; box-shadow:1px 2px 2px #bfbfbf;}
+.basic_data .data_info dd .fileBtn{ margin:37px 0px 0px 47px; position:relative;}
+.basic_data .data_info dd .fileBtn .file{ display:block; width:92px; height:24px; background:url(../image/personalFile/pw_sub.png) 0px -81px no-repeat; cursor:pointer; margin-bottom:10px;}
+.basic_data .data_info dd .fileBtn .file_info{ position:absolute; font-size:12px; color:#707070; top:-13px; left:114px; width:500%;}
+.basic_data .data_info dd .fileBtn .file_info .p2{ color:#959595; padding-top:16px;}
+.basic_data .data_info dd .fileBtn .file input{ position:absolute; top:0; left:0; filter:alpha(opacity=0.1); opacity:0.01; cursor:pointer;}
+.basic_data .data_info dd .fileBtn .up{ text-indent:-99999em;width:92px; height:24px; background:url(../image/personalFile/pw_sub.png) 0px -112px no-repeat; cursor:pointer;}
+.basic_data .data_info dd .fileBtn{ margin:37px 0px 0px 47px; position:relative;}
+.basic_data .data_info dd .fileBtn .file{ display:block; width:92px; height:24px; background:url(../image/personalFile/pw_sub.png) 0px -81px no-repeat; cursor:pointer; margin-bottom:10px;}
+.basic_data .data_info dd .fileBtn .file_info{ position:absolute; font-size:12px; color:#707070; top:-13px; left:114px; width:300%;}
+.basic_data .data_info dd .fileBtn .file_info .p2{ color:#959595; padding-top:16px;}
+.basic_data .data_info dd .fileBtn .file input{ position:absolute; top:0; left:0; filter:alpha(opacity=0.1); opacity:0.01; cursor:pointer;}
+.basic_data .data_info dd .sex{ color:#626262; font-size:14px; padding:4px 0px;}
+.basic_data .data_info dd .sex span{ margin-right:60px;}
+.basic_data .data_info dd .sex span input{ margin:0px 4px 0px 3px; position:relative; top:1px;}
+.per_submit{    width: 157px;  height: 42px;  background: url(../image/personalFile/pw_sub.png) 0px -141px no-repeat;  margin: 60px 0px 0px 305px;  cursor: pointer;}
+#form_box .on{border: 1px solid #cdf9ff;  border-radius: 3px;}
+.basic_data .data_info dd .selInp{width: 126px;  height: 30px;  color: rgb(156, 161, 163);  font-family: 微软雅黑;  padding: 4px 0px;}

@@ -1,0 +1,70 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="bgf7">
+    <div class="w1150 bbs_Release">
+        <form action="/share" method="post">
+            <div class="edit_wid" style="position:relative;">
+                <div class="edit_tit">
+                    <h3>
+                        我要发帖<i></i>
+                    </h3>
+                </div>
+                <div class="edit_box clear">
+                    <div class="edit_con_tit">
+                        <input type="text" name="shareTitle" id="shareTitle" maxlength="30" placeholder="在此键入标题" value="">
+                    </div>
+                </div>
+                <textarea name="shareContent" id="shareContent" class="edit_con"></textarea>
+                <div class="clear">
+                    <div class="edit_share">
+                        <input type="hidden" value="c82196092c5ccaebc324ba4f123bcae8" id="create_token">
+                        <input type="button" value="保存" class="issue2">
+                        <input type="submit" value="发布" class="issue" id="last_submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    //KindEditor脚本
+
+</script>
+<script type="text/javascript">
+
+    $(function(){
+        var editor;
+        /*    KindEditor.ready(function(K) {
+         editor = K.create('#shareContent', {
+         filterMode: true,
+
+         });
+         });*/
+
+        KindEditor.ready(function (K) {
+            editor = K.create('textarea[name="shareContent"]', { filterMode: true});
+        });
+
+        //提交
+        $("#last_submit").click(function(){
+            var isCheck = true,
+                    isLocked = false;
+            if($('#create_token').val() == ''){
+                alert('请勿非法提交！');
+                isCheck = false;
+                return false;
+            }
+            if($("#shareTitle").val() == ''){
+                alert('“标题”不能为空！');
+                isCheck = false;
+                return false;
+            }
+           /* if($("#shareContent").val() == ''){
+                alert('“内容”不能为空！');
+                isCheck = false;
+                return false;
+            }*/
+        });
+    });
+</script>
+{%endblock%}

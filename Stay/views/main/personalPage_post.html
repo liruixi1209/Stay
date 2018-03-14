@@ -1,0 +1,195 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="perBg">
+    <div class="perBg_inner">
+        <div class="per_Infor">
+            <div class="imgHead">
+                <a href="#"><img src="{{userInfo.imgHead}}" alt=""> </a>
+            </div>
+            <h3><a href="#" class="namePer">{{userInfo.uname}}</a></h3>
+            {%if userInfo.sign%}
+            <p class="perSign">{{userInfo.sign}}</p>
+            {%else%}
+            <p class="perSign">TA的签名还在环游世界 过两天就来</p>
+            {%endif%}
+        </div>
+        <!--广告-->
+        <div class="adverse">
+            <div class="userIndex_adv1">
+                <a href="#"><img src="../../public/image/personalPage/adv1.jpg"> </a>
+            </div>
+        </div>
+        <!--主要内容-->
+        <div class="perMain clear">
+            <div class=" main_left fl">
+                <div class="perStatus_add">
+                    <div class="release">
+                        <div class="statusCategory">
+                            <span class="status1"><i class="r1"></i>发布状态</span>
+                            <span class="status2"><a href="/create"><i class="r3"></i>发布帖子</a></span>
+                        </div>
+
+                        <div class="P_postingBox">
+                            <textarea class="P_status3" placeholder="分享现在的状态..."></textarea>
+                            <input type="submit" value="发布" class="P_btn1">
+                        </div>
+                        <div class="postingBox3" >
+                            <form method="post" action="/personalPage_show" enctype="multipart/form-data">
+                                <div class="textareaBox">
+                                    <textarea class="status4" name="textarea1" placeholder="此时此刻，你在如何待着？①待着鼓励你：记录自己美好生活的片刻；②分享新发现，告诉大家好好待着的方法。③待着不欢迎：广告、违法内容、与“待着生活方式”无关的内容。"></textarea>
+                                </div>
+                                <span class="photo z_indexClick" id="photograph"><!-- photo_hov -->
+                                    <a href="javascript:;" id="ac2"><i id="ac3"></i>照片</a>
+                                          <input type="file" class="file" name="statusPhoto"   onchange="uploadImage(this)">
+                                          <input type="hidden" name="ac" value="upload-images">
+
+                                </span>
+                                <a href="#" class="videoA topic"><i class="video"></i>视频 </a>
+                                <div class="photoImg jQz-index" id="imgPreviewBox">
+                                    <div class="photo_addImg">
+
+                                        <input type="file" class="file" name="statusPhoto"  multiple="multiple"  onchange="uploadImage(this)">
+                                        <input type="hidden" name="srcAll" class="srcAll" value="">
+
+                                    </div>
+                                    <div class="photo_number">共<i class="all">0</i>张，还可上传<i class="surplus">6</i>张</div>
+                                </div>
+                                <div class="tagsFrame">
+                                    <div class="tagsTextarea">
+                                        <lable class="zTags">多个标签用空格分隔，最多3个</lable>
+                                        <input type="text" maxlength="20" style="width:200px;" class="tagInput">
+                                    </div>
+                                </div>
+                                <input type="submit" value="发布" class="P_btn1">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perStatus_down">
+                    <div class="menu">
+                        <a href="/personalPage" class="on">首页</a>
+                        <a href="/personalPage_status?uid={{userInfo.uid}}">状态</a>
+                        <a href="/user/205990/apply">体验</a>
+                        <a href="/personalPage_post?uid={{userInfo.uid}}">帖子</a>
+                        <a href="/user/205990/fav">喜欢</a>
+                    </div>
+                    <div class="publishMain_status" style="padding-top: 20px">
+                        <div class="onlyBox">
+                            <h1 class="fl" style="font-size: 18px;font-weight:bold">发布状态</h1>
+                            <span class="fr" style="margin-right:8px;color:rgb(83, 83, 83);font-size: 15px ">共<i style="color: rgb(160, 160, 160)">{{counts}}</i>条</span>
+                        </div>
+
+
+                        <div class="in_box5" style="margin-top: 40px">
+                            <div class="index_share">
+                                <ul class="clear" id="listLoopArea">
+                                    {%if counts!=0%}
+                                    {%for content in contents%}
+                                    <li class="textLi">
+                                        <div class="textLink">
+                                            <span class="yin1"></span>
+                                            <span class="yin2"></span>
+                                            <a href="/share/detail?pid={{content.pid}}" target="_blank" class="a_links"></a>
+                                            <p>{{content.p_contents}}</p>
+
+                                        </div>
+                                        <div class="bom">
+                                            <a href="/user/206205" target="_blank"><img src="{{userInfo.imgHead}}" class="headImg"></a>
+                                            <h3><a href="/share/detail?pid={{content.pid}}" target="_blank">{{content.title}}</a></h3>
+                                            <span>{{content.p_addTime}}</span>
+                                            <aside class="icos">
+                                                <i class="i1">{{content.views}}</i>
+                                                <i class="i3">{{content.p_comments}}</i>
+                                            </aside>
+                                            <em class="imgIco"></em>
+                                        </div>
+                                    </li>
+                                    {%endfor%}
+                                    {%endif%}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="personalPage_more" id="getMore" data-page="1" data-pagenum="{{pages}}">
+                         <span id="load_more"> 更多</span>
+                     </div>-->
+                </div>
+            </div>
+
+
+            <div class="fr main_rigt">
+                <h1>关于<i>我</i></h1>
+                <!-- 职业，城市介绍-->
+                <div class="block1">
+                    <span class="professional">web前端开发</span>
+                    <a href="/personalSet?uid={{userInfo.uid}}">编辑</a>
+                    <p class="city">中国湖南</p>
+                </div>
+                <div class="line_ge"></div>
+                <!--我的标签-->
+                <div class="block2 ">
+                    <div class="block2_Til clear"><h3 class="fl"><i>我</i>的标签</h3>  <a href="#" class="fr mod">添加</a></div>
+                    <div class="myTags ">请填写你的专属标签</div>
+                    <!-- 输入框-->
+                    <div class="myTags_Box">
+                        <textarea class="textarea" placeholder="多个标签请用空格或逗号隔开" ></textarea>
+                        <input type="button" value="提交" class="submit" id="submit_tag">
+                    </div>
+                </div>
+                <div class="line_ge"></div>
+                <!--个人简介-->
+                <div class="block2 ">
+                    <div class="block2_Til clear"><h3 class="fl">个人简介</h3>  <a href="#" class="fr mod">添加</a></div>
+                    <div class="myTags ">请填写你的个人简介</div>
+                    <!-- 输入框-->
+                    <div class="intro_Box">
+                        <textarea class="textarea" placeholder="多个标签请用空格或逗号隔开" ></textarea>
+                        <input type="button" value="提交" class="submit" id="submit_intro">
+                    </div>
+                </div>
+                <div class="line_ge"></div>
+                <div class="fansBox">
+                    <div class="fans clear">
+                        <div class="fl attention">
+                            <a href="#" class="all"></a>
+                            <span>5</span>
+                            <em>关注</em>
+                        </div>
+                        <ul class="fl imgList">
+                            <li class="fl ">
+                                <a href="#"><img src="../../public/image/status/touxiang1.png"> </a>
+                                <div class="showName">
+                                    <span class="name">daizher</span>
+                                    <span class="san"></span>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="fans clear">
+                        <div class="fl attention">
+                            <a href="#" class="all"></a>
+                            <span>1</span>
+                            <em>粉丝</em>
+                        </div>
+                        <ul class="fl imgList">
+                            <li class="fl ">
+                                <a href="#"><img src="../../public/image/status/touxiang1.png"> </a>
+                                <div class="showName">
+                                    <span class="name">daizher</span>
+                                    <span class="san"></span>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

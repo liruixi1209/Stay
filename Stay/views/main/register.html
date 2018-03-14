@@ -1,0 +1,38 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="register">
+    <div class="invCode apply_a apply_b">
+        <div class="webpagelogo">
+            <h1>用户注册</h1>
+            <div class="slogan">
+                <span></span>
+            </div>
+            <div class="tel" id="login_form">
+                <div class="log1R">
+                    <span class="icon1R"></span>
+                    <input type="text" value class="text" name="login_form_loginname" placeholder="请输入您的账号" id="login_form_loginname" style="border: 1px solid rgb(220, 220, 220);"/>
+                </div>
+                <div class="log2R">
+                    <span class="icon2R"></span>
+                    <input type="password" value class="text" name="login_form_loginpwd" placeholder="请输入您的密码" id="login_form_loginpwd" style="border: 1px solid rgb(220, 220, 220);"/>
+                </div>
+                <div class="log3R">
+                    <span class="icon3R"></span>
+                    <input type="password" value class="text" name="login_form_loginrepwd" placeholder="请确认您的密码" id="login_form_loginrepwd" style="border: 1px solid rgb(220, 220, 220);"/>
+                </div>
+                <p class="colWarning"></p>
+                <input type="submit" class="registerBtn" id="sendCodeBtn"/>
+            </div>
+            <div class="Clause">
+                注册则表示同意
+                <a href="#" target="_blank">《会员条款》</a>
+            </div>
+            <div class="Regis">
+                已有账号?
+                <a href="/login">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

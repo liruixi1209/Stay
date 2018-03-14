@@ -1,0 +1,43 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="bgf7">
+    <div class="login_box">
+        <div class="login_content">
+            <h1 class="">用户登录</h1>
+            <div class="link_box">
+                <a href="#" class="aclick a1"></a>
+                <a href="#" class="aclick a2"></a>
+                <a href="#" class="aclick a3"></a>
+                <a href="#" class="aclick a4"></a>
+                <p>使用以上社交网站的登录</p>
+            </div>
+            <div class="huo"></div>
+            <div class="mail" id="login-form">
+                <div class="log1">
+                    <span class="ico1"></span>
+                    <span class="note">请输入您的账号</span>
+                    <span class="error" id="username_error"></span>
+                    <span class="errorImg"></span>
+                    <input type="text" value="" class="text" name="username" id="username" >
+                </div>
+                <div class="log2">
+                    <span class="ico2"></span>
+                    <span class="note">请输入您的密码</span>
+                    <span class="error" id="pwd_error"></span>
+                    <span class="errorImg"></span>
+                    <input type="password" value="" class="text" name="pwd" id="pwd">
+                </div>
+                <p class="colWarning"></p>
+                <input type="submit" class="logBtn" id="login_form_submit" value="登录">
+                <div class="log3">
+                    <label>
+                        <input type="checkbox" id="remember">记住我
+                    </label>
+                    <a href="" class="forget">忘记密码?</a>
+                </div>
+                <p class="goZuce">还没有账号？<a href="/register">注册</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

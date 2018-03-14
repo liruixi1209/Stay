@@ -1,0 +1,12 @@
+{%extends 'layout.html'%}
+{%block content%}
+    <h1>{{news.title}}</h1>
+<div id="main">
+    {{news.content}}
+</div>
+<script>
+    var div  = document.getElementById('main');
+    var html = div.innerText;
+    div.innerHTML = html;
+</script>
+{%endblock%}

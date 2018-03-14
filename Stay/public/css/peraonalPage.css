@@ -1,0 +1,640 @@
+.fr{
+    float: right;;
+}
+.perBg{
+    width: 100%;
+    background: url("../image/personalPage/person_bg.jpg") #eaeaea top center no-repeat;
+    min-width: 1150px;
+}
+.perBg_inner{
+    width: 1150px;
+    margin: 0px auto;;
+}
+.per_Infor{
+    width: 1150px;
+    text-align: center;
+    padding-top: 85px;
+    height:265px;
+    text-align: center;
+    color: #fff;
+}
+.imgHead{
+    width: 126px;
+    height: 126px;
+    background: url(../image/personalPage/person_headimgbg.png) no-repeat;
+    margin: 0px auto;
+}
+.imgHead img{
+    border-radius:50% ;
+    width: 90px;
+    height: 90px;
+    margin: 16px 0px 0px 0px;
+}
+.per_Infor h3{
+    margin: 0 auto;
+}
+.namePer{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-family: "宋体";
+    font-size: 23px;
+}
+.namePer:hover{
+    color: #fff;
+    text-decoration: none;
+
+}
+.perSign{
+    font-size: 13px;
+}
+.adverse{
+    width: 1150px;
+    margin: 17px auto 12px auto;
+}
+.perMain{
+    width: 1150px;
+
+}
+.main_left{
+    width:736px;
+}
+.perStatus_add{
+    width: 793px;
+    margin-bottom: 16px;
+    background: #fff;
+    box-shadow: 0px 0px 5px #ccc;
+}
+.release{
+    padding: 45px 35px 20px 35px;
+}
+.statusCategory{
+    font-size: 16px;
+    color: #959595;
+    margin-top: 15px;
+}
+.statusCategory span {
+    margin-right: 18px;
+    display: inline-block;
+    cursor: pointer;
+}
+.statusCategory span i{
+    width: 19px;
+    height: 16px;
+    position: relative;
+    top: 4px;
+    margin-right: 6px;
+    display: inline-block;
+    background: url(../image/personalPage/person_icos.png) no-repeat;
+}
+.r1{
+    background-position: 0px 0px;
+    width: 17px;
+}
+.statusCategory span .r3{
+    background-position:0px -44px;
+    width: 15px;
+}
+.statusCategory span a{
+    color: #959595;
+}
+.statusCategory span a:hover{
+    text-decoration: none;
+}
+.status1:hover .r1{
+    background-position: -30px 0px;
+}
+.status2:hover .r3{
+    background-position: -30px -44px;
+}
+.P_postingBox{
+    margin-top: 12px;
+}
+.P_status3{
+    width:690px;
+    border: 1px solid #e6e6e6;
+    height: 38px;
+    padding: 7px 10px 0px 13px;
+    border-radius: 2px;
+    background: #f2f2f2;
+    resize: none;
+    outline: none;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.P_btn1{
+    margin: 20px 0px 0px 613px;
+    cursor: pointer;
+    border-radius: 2px;
+    width: 100px;
+    height: 40px;
+    background: #50c8d7;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: inset 0 0 2px #45afbc;
+}
+.postingBox3{
+   margin-top: 12px;
+    position: relative;
+    display: none;
+}
+.postingBox3 .textareaBox{
+    height: 99px;
+    padding: 7px 10px 0px 13px;
+    border: 1px solid #e6e6e6;
+    background: #f2f2f2;
+}
+.status4{
+    width:690px;
+    height: 99px;
+    border-radius: 2px;
+    resize: none;
+    outline: none;
+    font-size: 14px;
+    color: #3d3d3d;
+    border:none;
+    background: #f2f2f2;
+
+}
+.postingBox3 .photoA .photo{
+    background: url("../image/status/icos.png") -224px 0px no-repeat;
+}
+.postingBox3 .photoA{
+    font-size: 13px;
+    color: #959595;
+    position: absolute;
+    top: 82px;
+    left: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.postingBox3 .topic i{
+    width: 19px;
+    height: 14px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right:4px;
+}
+.postingBox3 .videoA{
+    font-size: 13px;
+    color: #959595;
+    position: absolute;
+    top: 82px;
+    left: 72px;
+    display: inline-block;
+    cursor: pointer;
+}
+.postingBox3 .videoA .video {
+    background: url("../image/status/icos.png") -261px 0px no-repeat;
+}
+.postingBox3 .tagsFrame{
+    border-left:1px solid #ebebeb;
+    border-right:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+    width:721px;
+    background-color: #fff;
+    margin-top: 0;
+}
+.postingBox3 .tagsFrame .tagsTextarea{
+    width:708px;
+    height:27px;
+    font-size: 14px;
+    position: relative;
+    cursor: text;
+
+
+}
+.postingBox3 .tagsFrame .zTags{
+    position: absolute;
+    color:#ccc;
+    font-size: 13px;
+    background-color: #fff;
+}
+.postingBox3 .tagsFrame .tagInput{
+    height:20px;
+    line-height: 20px;
+    color:#333;
+    border:none;
+    outline:none;
+    background-color: #fff;
+    max-length:20;
+}
+
+/*
+左下*/
+.perStatus_down{
+    width: 736px;
+    background: #fff;
+    box-shadow: 0 0 4px #c7c5c5;
+    padding: 0px 29px 40px 29px;
+}
+.menu{
+    border-bottom: 1px solid #efefef;
+    background: #fff;
+    padding: 44px 6px 14px 0px;
+    position: relative;
+}
+.menu .on{
+    color: #50c8d7;
+}
+.perStatus_down .menu a{
+    font-size: 16px;
+    color: #535353;
+    display: inline-block;
+    margin-right: 62px
+}
+.publishMain{
+    padding-top: 47px;
+}
+.modleInfo{
+    margin-bottom: 6px;
+
+}
+.modleInfo .headImg{
+    width: 46px;
+    height: 46px;
+    border-radius: 100px;
+    box-shadow: 1px 1px 1px #C2C2C4;
+}
+.infoRight{
+    width: 660px;
+    margin-left: 29px;
+    position: relative;
+    border-bottom: 1px dotted #e3e3e3;
+    padding-bottom: 24px;
+}
+
+.nameIntro{
+    font-size: 15px;
+    color: #535353;
+    margin-top: 14px;
+}
+.name{
+    color: #a0a0a0;
+    font-size: 13px;
+}
+.infoRight .time{
+    font-size: 12px;
+    color: #959595;
+    position: absolute;
+    right: 0px;
+    top: 14px;
+}
+.contentBox{
+    padding: 14px 0px 15px 16px;
+    margin-top: 50px;
+    background: #f8f9fa;
+    position: relative;
+}
+.contentText{
+    width: 560px;
+    font-size: 13px;
+    color: #707070;
+    margin: 18px 0px 0px 38px;
+}
+.p_Text{
+    line-height: 18px;
+    position: relative;
+    word-wrap: break-word;
+    padding: 0px 0px 30px 0px;
+    width: 562px;
+}
+.p_Text em{
+    width: 11px;
+    height: 12px;
+    background: url(../image/personalPage/person_icos.png) 0px -70px no-repeat;
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+}
+.p_Text i{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    background: url(../image/personalPage/person_icos.png) -19px -70px no-repeat;
+}
+.contentText .icos{
+    font-size: 12px;
+    color: #959595;
+    margin-top: 8px;
+    text-align: right;
+    position: absolute;
+    right: 24px;
+    bottom: 17px;
+}
+.contentText .icos i{
+    background: url(../image/personalPage/index_icos.png) 0px 0px no-repeat;
+    margin-right: 8px;
+    padding-left: 22px;
+   font-style:normal;
+}
+.contentText .icos .i4{
+    background-position: 0px -27px;
+    cursor: pointer;
+}
+.contentText .icos .fava{
+    background: url(../image/personalPage/index_icos.png) 0px 0px no-repeat;
+    margin-right: 8px;
+    padding-left: 22px;
+    background-position: 0px -27px;
+    cursor: pointer;
+}
+
+.contentText .icos .i5{
+    background-position: 0px -56px;
+    cursor: pointer;
+}
+.contentText .icos .i4_red{
+    width: 17px;
+    height: 16px;
+    background: url(../image/personalPage/person_icos.png) no-repeat -54px 0px;
+}
+.personalPage_more{
+    font-size: 14px;
+    color: #555;
+    width: 660px;
+    text-align: center;
+    margin: 40px 0px 10px 45px;
+    cursor: pointer;
+}
+.personalPage_more .load_more{
+    font-size: 14px;
+    color: #555;
+    width: 640px;
+    text-align: center;
+    margin: 40px 0px 10px 45px;
+    cursor: pointer;
+}
+
+.main_rigt{
+    width: 265px;
+    padding: 43px 38px;
+    background: #f2f2f2;
+    box-shadow: 0 0 4px #c7c5c5;
+}
+.main_rigt h1{
+    font-size: 30px;
+    color: #a0a0a0;
+    text-align: right
+}
+.main_rigt h1 i{
+    color: #535353;
+}
+.block1{
+    font-size: 14px;
+    color: #535353;
+    padding: 34px 0px 15px 0px;
+}
+.block1 a{
+    float: right;
+    font-size: 12px;
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+.block1 p{
+    margin-bottom: 0;
+}
+.main_rigt .line_ge{
+    border-top: 1px solid #f6f7f8;
+    border-bottom: 1px solid #fafbfb;
+    background: #dedede;
+    height: 1px;
+}
+.block2{
+    font-size: 14px;
+    color: #a0a0a0;
+    padding: 28px 0px 17px 0px;
+}
+.block2 .block2_Til h3{
+    margin-top: 0;
+    font-size: 18px;
+    color: #2f2f2f;
+    padding-bottom: 5px;
+}
+.block2 .block2_Til .mod{
+    margin-top: 1px;
+    text-decoration: underline;
+    font-size: 12px;
+    color: #a0a0a0;
+}
+.block2 .block2_Til .modhov{
+    margin-top: 1px;
+    text-decoration: underline;
+    font-size: 12px;
+    color: #535353;
+}
+.block2 .myTags_Box{
+    padding-top: 7px;
+    display: none;
+}
+
+.block2 .myTags_Box .textarea{
+    font-size: 14px;
+    color: #898989;
+    background: #fff;
+    width: 263px;
+    height: 61px;
+    padding: 5px 10px;
+    box-shadow: inset 0 0 4px #efeff0;
+    resize: none;
+    outline: none;
+    border: 1px solid #eee;
+}
+.block2 .myTags_Box .submit{
+    cursor: pointer;
+    margin-top: 9px;
+    width: 263px;
+    height: 30px;
+    background: #50c8d7;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 0 3px #cecdcd;
+}
+i,em{
+    font-style: normal;
+}
+.block2 .intro_Box{
+    padding-top: 7px;
+    display: none;
+}
+.block2 .intro_Box .textarea{
+    font-size: 14px;
+    color: #898989;
+    background: #fff;
+    width: 263px;
+    height: 112px;
+    padding: 5px 10px;
+    box-shadow: inset 0 0 4px #efeff0;
+    resize: none;
+    outline: none;
+    border: 1px solid #eee;
+}
+.block2 .intro_Box .submit{
+    cursor: pointer;
+    margin-top: 9px;
+    width: 263px;
+    height: 30px;
+    background: #50c8d7;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 0 3px #cecdcd;
+}
+.fansBox{
+    margin-top: 26px;
+}
+.fans .attention{
+    cursor: pointer;
+    width: 88px;
+    height: 77px;
+    border: 1px solid #eee;
+    background: #fbfbfb;
+    border-radius: 2px;
+    text-align: center;
+}
+.fans .attention span{
+    display: block;
+    padding-top: 12px;
+    font-size: 24px;
+    color: #000;
+    font-family: "Century Gothic"
+}
+.fans .attention em{
+    display: block;
+    font-size: 13px;
+    color: #737373;
+    padding-top: 1px;
+}
+.imgList{
+    margin-top: 12px;
+    height: 70px;
+}
+.fans .imgList li{
+    margin-left: 7px;
+    position: relative;
+    cursor: pointer;
+}
+.fans .imgList li img{
+    width: 52px;
+    height: 52px;
+    border-radius: 100px;
+    border: 3px solid #fff;
+    box-shadow: 1px 1px 1px #C2C2C4;
+}
+.fans .imgList li .showName{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 160px;
+    display: none;
+}
+.fans .imgList li .showName .name {
+    background: #000;
+    font-size: 12px;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 2px;
+    box-shadow: 1px 0px 1px #000;
+}
+.fans .imgList li .showName .san{
+    background: url(../image/personalPage/name_ico.png) no-repeat;
+    width: 13px;
+    height: 4px;
+    position: absolute;
+    top: -3px;
+    left: 11px;
+}
+/*照片浮动框*/
+.postingBox3 .photoImg{ width:708px; border-left:1px solid #ebebeb; border-right:1px solid #ebebeb; border-bottom:1px solid #ebebeb; position:relative; padding:11px 0px 10px 13px; /* display:none;*/}
+.postingBox3 .photoImg .fileImg{ width:70px; height:70px;}
+.postingBox3 .photoImg .close{ width:16px; height:16px; background:url(../image/personalPage/close.png) no-repeat; position:relative; top:-54px; left:-20px; cursor:pointer; margin-right:-8px; display:inline-block;}
+.postingBox3 .photoImg .photo_addImg{ width:70px; height:70px; display:inline-block; background:url(../image/personalPage/zhuangtai_add.png) no-repeat; cursor:pointer;}
+.postingBox3 .photoImg .photo_addImg:hover{ background-position:0px -79px;}
+.postingBox3 .photoImg .photo_number{ color:#7d7d7d; margin:5px 0px 0px 0px;}
+/*照片*/
+.postingBox3 .photo{ font-size:13px; color:#959595; position:absolute; top:82px; left:10px; display:inline-block; cursor:pointer;}
+.postingBox3 .photo:hover i{ background:url(../image/personalPage/person_icos.png) 0px -262px no-repeat;}
+.postingBox3 .photo i{ background:url(../image/personalPage/icos.png) -224px 0px no-repeat; width:19px; height:14px; display:inline-block; position:relative; top:2px; margin-right:7px;}
+.postingBox3 .photo:hover i{ background:url(../image/personalPage/icos.png) -224px -30px no-repeat; width:19px; height:14px; display:inline-block; position:relative; top:2px; margin-right:7px;}
+.postingBox3 .photo .i_photo_hov{ background:url(../image/personalPage/icos.png) -383px -29px no-repeat;}
+.postingBox3 .photo .file{ position:absolute; left:0px; top:-2px; width:54px; opacity:0; z-index:1; cursor:pointer;}
+#ac2{color: #959595;}
+/*删除按钮*/
+.contentBox .contentText .icos em{ cursor:pointer;}
+.contentBox .contentText .icos em:hover{ color:#626262;}
+/*评论*/
+.ReviewBox{ border-top:1px solid #eee; background:#F8F9FA; padding:22px 0px 20px 30px; width:630px; margin-left:0px; display:none; position:relative;}
+.ReviewBox .inputTxt .w_input{ width:482px; height:25px; padding:6px 0px 0px 10px; border:1px solid #efefef; background:#fff; margin:2px 16px 0px 0px; resize:none;}
+.ReviewBox .inputTxt .txtBtn{ width:95px; height:33px; text-align:center; line-height:33px; font-size:14px; color:#fff; border-radius:3px; background:#50c8d7; cursor:pointer;}
+.ReviewBox .com_list{ margin:20px 0 0 0;}
+.ReviewBox .com_list li{ width:595px;}
+.ReviewBox .com_list .o{ padding:0px 0 30px 0px;  }
+.ReviewBox .com_list .h{ float: left; width:45px;}
+.ReviewBox .com_list .h img{ border-radius:100px; width:43px; height:43px; margin-top:5px;}
+.ReviewBox .com_list .h .name { display: inline-block; width: 64px; text-align: center; color: #4ec9d6; font-size: 14px; word-break: break-all; word-wrap: break-word; padding-top: 8px; }
+.ReviewBox .com_list .block { float:left; width:525px; border-bottom:1px solid #eee; padding-bottom:30px; margin-left:20px; }
+.ReviewBox .com_list .c { font-size:14px; width:480px; }
+.ReviewBox .com_list .nameNew{ font-size:13px; color:#50c8d7; display:block; padding:5px 0px 0px 0px; float:left;}
+.ReviewBox .com_list .nameNew a:hover{ text-decoration:underline;}
+.ReviewBox .com_list .times{ font-size:12px; display:inline-block; padding:7px 0 0px 16px; color:#a5a5a5; font-family:"å¾®è½¯é›…é»‘"; }
+.ReviewBox .com_list .re{ float:right; display: block; margin:10px 0 0 0; color:#959595; font-size:12px; text-decoration:none; }
+.ReviewBox .com_list .re:hover{ color:#50c8d7;}
+.ReviewBox .com_list .re:hover{ text-decoration:underline;}
+.ReviewBox .com_list .c .reName{ color:#50c8d7;}
+.ReviewBox .com_list .c .texts { font-size:13px; display:block; word-break:break-all; word-wrap:break-word; padding-right:0px; color:#686767; line-height:20px; }
+.ReviewBox .moreMeg{ font-size:13px; text-align:center;}
+.ReviewBox .shou{ font-size:12px; color:#a0a0a0; float:right; position:relative; top:-15px; margin-right:25px; cursor:pointer;}
+.ReviewBox .shou i{ display:inline-block; width:10px; height:8px; background:url(../image/status/f_icos.png) -486px -24px  no-repeat; margin-left:5px; }
+.ReviewBox .r_san{ width:19px; height:8px; display:inline-block; background:url(../image/personalPage/person_icos.png) 0px -148px  no-repeat; position:absolute; top:-8px; right:75px; }
+.ReviewBox .com_list .reviewOuote{ background:#fff; padding:10px 20px 15px 20px; border-radius:10px; margin-top:20px;}
+.ReviewBox2{ background:#f8f9fa; border-top:1px solid #eee; padding:22px 0px 20px 30px; width:630px; margin-left:0px; margin-top:0px; display:none; position:relative;}
+.ReviewBox2 .shou{ bottom:20px;}
+.infoRight .model_comments .com_list li {  border: none;  }
+/*个人主页-首页-状态*/
+.modelInfo .infoRight .contentBox .text h4{ color:#3d3d3d; font-size:16px; font-family:"宋体"; font-weight:bold; position:relative;}
+.modelInfo .infoRight .bcontentBoxox .text h4 a{ color:#3d3d3d; font-family:"宋体";}
+.modelInfo .infoRight .contentBox .text h4 i{ width:11px; height:12px; background:url(../image/personalPage/person_icos.png) 0px -70px no-repeat; display:inline-block; position:absolute; left:-18px; top:2px;}
+.modelInfo .infoRight .contentBox .text .p_t{ line-height:18px; position:relative; word-wrap:break-word;}
+.modelInfo .infoRight .left_dou{ width:11px; height:12px; background:url(../image/personalPage/person_icos.png) 0px -70px no-repeat; display:inline-block; position:absolute; left:-18px; top:2px;}
+.modelInfo .infoRight .contentBox .text .p_t a{ color:#707070;}
+.modelInfo .infoRight .contentBox .text .p_t a:hover{ text-decoration:none;}
+.modelInfo .infoRight .contentBox .text .p_t2{ padding-top:16px;}
+.modelInfo .infoRight .contentBox .imgShow{ width:219px; border-top:1px solid #d7d8d9; border-right:1px solid #d7d8d9;}
+/*个人主页-首页-帖子*/
+.index_share ul{ margin-bottom:22px;}
+.index_share li{ width:360px; height:350px; float:left; margin:0px 13px 15px 0px;}
+.index_share li .textLink{ word-wrap:break-word; position:relative; width:290px; height:150px; padding:50px 35px; background:#3d3d3d; font-size:13px; color:#b5b5b5;}
+.index_share li .textLink .yin1{ width:12px; height:12px; display:inline-block; position:absolute; top:25px; left:25px; background:url(../image/personalPage/person_icos.png) 0px -70px no-repeat; z-index:1;}
+.index_share li .textLink .yin2{ width:12px; height:12px; display:inline-block; position:absolute; bottom:25px; right:25px; background:url(../image/personalPage/person_icos.png) -19px -70px no-repeat; z-index:1;}
+.index_share li .textLink p{ line-height:21px; text-indent:2em;}
+.index_share li .a_links{ position:absolute; top:0; left:0; display:block; width:360px; height:250px; }
+.index_share li .a_links:hover{ text-decoration:none;}
+.index_share li.clemr{ margin-right:0px;}
+.index_share li .shImg{ width:360px; height:250px; margin-bottom:-4px;}
+.index_share li .bom{ border:1px solid #eaeaea; background:#f8f9fa; height:98px; position:relative; top:0px;}
+.index_share li .bom .headImg{ width:48px; height:48px; border-radius:100px; margin:16px 0px 0px 10px;}
+.index_share li .bom h3{ position:absolute; top:21px; left:72px;}
+.index_share li .bom h3 a{ font-size:14px; color:#7d7d7d;}
+.index_share li .bom span{ font-size:12px; color:#959595; position:relative; top:-8px; left:10px;}
+.index_share li .bom .imgIco{ width:16px; height:16px; background:url(../image/share/index_icos.png) 0px -82px no-repeat; position:absolute; top:-8px; left:26px;}
+.index_share li .bom .icos{ position:absolute; bottom:8px; right:21px; color:#959595;}
+.index_share li .bom .icos i{ background:url(../image/share/index_icos.png) 0px 0px no-repeat; font-size:11px; margin-right:5px;}
+.index_share li .bom .icos .i1{ background-position:0px 0px; padding-left:22px;}
+.index_share li .bom .icos .i2{ background-position:0px -27px; padding-left:22px;}
+.index_share li .bom .icos .i3{ background-position:0px -56px; padding-left:22px;}
+.index_share li.textLi .bom{ background:#707070; border:1px solid #707070;}
+.index_share li.textLi .bom h3 a{ color:#d2d2d2;}
+.index_share li.textLi .bom h3 a:hover{text-decoration: underline;}
+.index_share li.textLi .bom span{ color:#d2d2d2;}
+.index_share li.textLi .bom .icos{ color:#d2d2d2;}
+.index_share li.textLi .bom .imgIco{ width:16px; height:16px; background:url(../image/personalPage/person_icos.png) -25px -167px no-repeat; position:absolute; top:-8px; left:26px;}

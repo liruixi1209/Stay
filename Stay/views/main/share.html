@@ -1,0 +1,171 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="shareBodybg">
+    <section class="shareContent">
+        <article class="com_title"></article>
+        <article class="com_banner">
+            <div class="bg">
+                <ul style="position: relative; width: 1000px; height: 15px;">
+                    <li style="transition:all .5s;position: absolute;width:1000px;left:0px;top:0px;opacity: 1;"><a href="#"><img src="/public/image/share/20151218103844644.jpg"/></a></li>
+                    <li style="transition:all .5s;position: absolute;width:1000px;left:0px;top:0px;opacity: 0;"><a href="#"><img src="/public/image/share/20151218183314830.jpg"/></a></li>
+                    <li style="transition:all .5s;position: absolute;width:1000px;left:0px;top:0px;opacity: 0;"><a href="#"><img src="/public/image/share/20151218183331308.jpg"/></a></li>
+                    <li style="transition:all .5s;position: absolute;width:1000px;left:0px;top:0px;opacity: 0;"><a href="#"><img src="/public/image/share/20151218183435372.jpg"/></a></li>
+                </ul>
+                <div class="hd">
+                    <ul><li class="on">1</li><li class="">2</li><li class="">3</li><li class="">4</li></ul>
+                </div>
+            </div>
+        </article>
+        <article class="com_info clear">
+            <div class="fl Cominfo_left borStyle" style="margin-top: 1px;">
+                <div class="titleBox clear" id="start">
+                    <ul class="clear comTitle">
+                        <li><a href="/share">全部</a></li>
+                        <li><a href="" class="on">官方活动</a></li>
+                        <li><a href="">体验报告</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="hothing">
+                    <div class="tagCur">
+                        <a href="" class="on">最新</a>
+                        <a href="">热门</a>
+                    </div>
+                </div>
+                <!--列表内容-->
+                <div class="bbsList">
+                    <ul class="bbsList_ul">
+                        {% for content in contents%}
+                        <li class="clear">
+                            <div class="fl touHead allHeadImg">
+                                <a href="/user/109464" target="_blank">
+                                    <img src="{{content.imgHead}}" class="bbsHeadImg lazyLoad" style="display: inline;">
+                                </a>
+                            </div>
+                            <div class="fl bbsmainRight">
+                                <h3>
+                                    <a href="/share/detail?pid={{content.pid}}" target="_blank" class="shareTitle">{{content.title}}</a>
+                                </h3>
+                                <div class="nameTime">
+                                    <a href="/user/109464" target="_blank" class="b_name">{{content.uname}}</a>
+                                    <span>--</span>
+                                    <span class="b_time">{{content.p_addTime|date('Y年m月d日 H:i:s',time()-480)}}</span>
+                                </div>
+                                <div class="main_haveImg">
+                                    <div class="clear">
+                                        {% if cate.face=='' %}
+                                        <div class="bbsText_in"><p><a href="/share/detail?pid={{content.pid}}" target="_blank" class="shareA">{{content.p_contents}}</a></p></div>
+                                        {% else %}
+                                        <a href="/share/detail?pid={{content.pid}}" target="_blank">
+                                            <img src="" data-original="http://cache1.daizhe.cn/share/20160113/3/20160113005434279_176_112.jpg" class="fl bbsImg lazyLoad" style="display: block;">
+                                        </a>
+                                        <div class="fr bbsText_in">
+                                            <p>
+                                                <a href="/share/detail/?pid={{content.pid}}" target="_blank" class="shareA">{{content.p_contents}}</a><
+                                                /p>
+                                        </div>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                                <div class="clear bbsTagesIcos">
+                                    <div class="fr b_icos">
+                                        <i class="views">{{content.views}}</i><i class="i3">{{content.p_comments}}</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                    <div class="pager">
+                        <ul class="clear">
+                            <li class="previous fl">
+                                {%if page<=1%}
+                                <span>没有上一页了</span>
+                                {%else%}
+                                <a href="/share?page={{page-1}}&cateId={{cateId}}">上一页</a>
+                                {%endif%}
+                            </li>
+                            <li class="fl pages_xjq" >
+                                <strong>{{page}}/{{pages}}</strong>
+                            </li>
+                            <li class="next fr">
+                                {%if page>=pages%}
+                                <span>没有下一页了</span>
+                                {%else%}
+                                <a href="/share?page={{page+1}}&cateId={{cateId}}">下一页</a>
+                                {%endif%}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="fr Cominfo_right">
+                <div class="fabu" style="position:static;top:0px;left:50%;margin:0px auto;z-index: 999;">
+                    <a href="/createguide" class="fbBtn">
+                        <i></i>
+                        发布新帖
+                    </a>
+                </div>
+                <div class="Cominfo_right_info borStyle" style="margin-top:15px;">
+                    <div class="experienceReport">
+                        <h4>
+                            热门帖子
+                        </h4>
+                        <ul class="reportList">
+                            <li>
+                                <div class="right_textno">
+                                    <i class="one"></i>
+                                    <a href="/share/detail/id/20027" class="h_txt">南沙港</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+<script>
+    window.onload= function () {
+        var textA = document.getElementsByClassName('bbsText_in');
+        for (var i = 0; i < textA.length; i++) {
+            var html = textA[i].getElementsByTagName('a')[0].innerText;
+            textA[i].getElementsByTagName('a')[0].innerHTML = html;
+        }
+
+
+
+        var bgLi = $(".bg ul li");
+        var hdLi = $(".hd ul li");
+        var bgI = 0;
+        var timer=null;
+        function lb() {
+            bgI++;
+            if (bgI > 3) {
+                bgI = 0;
+            }
+            for (var i = 0; i < 4; i++) {
+                bgLi[i].style.opacity = 0;
+                hdLi[i].className = '';
+            }
+            bgLi[bgI].style.opacity = 1;
+            hdLi[bgI].className = 'on';
+        }
+
+        timer = setInterval(lb, 3000);
+        bgLi.mouseover(function () {
+            clearInterval(timer);
+            console.log(111);
+        })
+        bgLi.mouseout(function () {
+            timer = setInterval(lb, 3000);
+            console.log(2222);
+        })
+
+    }
+
+
+
+
+</script>
+{%endblock%}

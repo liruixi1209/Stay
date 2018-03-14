@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin-left: 0;
+}
+input{
+    border:none;
+    outline: none;
+}
+i{
+    font-style: normal;
+}
+.clear:before{
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+.clear:after{
+    clear:both;
+}
+.clear:after{
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+html{
+  /*  background: url("../images/bodyBg.png") #e5e5e5 repeat-x top;*/
+}
+.fl{
+    float:left;
+}
+.fr{
+    float: right;
+}

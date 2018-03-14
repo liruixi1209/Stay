@@ -1,0 +1,169 @@
+a{text-decoration: none;}
+
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+.header{width: 100%;background: #111;height: 50px;min-width: 1150px;position: relative;z-index: 99999;position: relative;}
+.nav{position: relative;float: left;margin-left: 164px;}
+.logo{width: 135px;height: 27px;background: url(../image/header/logo2.png) no-repeat;position: absolute;top: 12px;left: 50px;}
+.h_left{margin-left: 50px;float: left;width: 720px;}
+.header .h_left .nav li{float: left;font-size: 13px;position: relative;z-index: 2;font-family: "微软雅黑";}
+.header .h_left .nav li a{color: #fff;display: inline-block;padding: 25px 21px 0;height: 36px;text-shadow: 2px 2px 2px #010101;}
+.header .h_left .nav li .navOn{color: #50c8d7;}
+.client_New{width: 21px;height: 8px;color: #ff5b54;position: absolute;top: 19px;right: -2px;font-size: 9px;}
+
+.fl{float:left;}
+.user_box{margin-right: 12px;}
+.search_box{padding-top: 14px;position: absolute;right: 50px;}
+.login{font-size: 13px;color: #a0a0a0;display: inline-block;margin: 4px 13px 0px 13px;}
+.search_line{width: 1px;height: 26px;background: #3d3d3d;margin-top: 1px;}
+.regis{font-size: 13px;color: #a0a0a0;display: inline-block;margin: 4px 0px 0px 13px;}
+.weilaunch_exper{margin-left: 20px;}
+.launch_exper{color: #fff;font-size: 14px;background: #03aeba;width: 110px;height: 25px;line-height: 25px;text-align: center;
+    border-radius: 15px;display: inline-block;margin-left: 10px;}
+.search_frame{
+    position: relative;
+    width:222px;
+    overflow: hidden;
+}
+.search_frameLeft{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    float:right;
+    right: -220px;
+    width: 0;
+    transition:all 0.5s;
+
+}
+.sear{
+    background: #2f2f2f;
+    border-radius: 2px;
+    background: url("../image/header/search_searbg.png") no-repeat;
+    width: 212px;
+    height: 26px;
+    padding-top: 1px;
+    color: #fff;
+    padding-left: 10px;
+
+
+}
+.searBtn{
+    width: 16px;
+    height: 16px;
+    background: url(../image/header/searBtn.png) no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: 22px;
+    top: 5px;
+}
+.search_box input{outline:none;margin: 0;list-style-type: none;border: 0;font-weight: normal;}
+.sear{background: #2f2f2f;border-radius: 2px;width: 202px;height: 26px;background: url(../image/header/search_searbg.png) no-repeat;padding-top: 1px;color: #fff;padding-left: 10px;}
+/*已登录*/
+.user_box2{position: relative;cursor: pointer;min-width: 135px;height: 30px;padding-top: 2px;top: -2px;overflow: hidden;}
+.headImg{width: 33px;height: 33px;background: url('') no-repeat;position: relative;top: -2px;left: 10px;}
+.user_box2 a{color: #50c8d7;text-decoration: none;}
+.headImg img{width: 26px;height: 26px; border-radius: 100px;margin: 0px 0px 0px 3px;border: 2px solid rgba(255,255,255,0.5);border-radius: 100px;}
+.headName{color: #fff;margin: 5px 0px 0px 20px;padding-right: 10px;position: relative;}
+.message_t{display: inline-block;color: #fff;font-size: 10px;font-family: Arial, Helvetica, sans-serif;background: #ff6e68;
+    padding: 0px 4px 0px 2px;border-radius: 2px;position: absolute;top: 1px;right: 0px;z-index: 2;}
+.headName i{width: 8px;height: 4px;background: url(../image/index/name_rico.png) no-repeat;display: inline-block;position: relative;
+    top: -2px;left: 8px;}
+.headName a{color: #50c8d7;text-decoration: none;}
+.user_more{position: absolute;left: 10px;top: 38px;width: 125px;height: 142px;background: url(../image/index/navMorebg2.png) no-repeat;z-index: 100;}
+.user_more .message{display: inline-block;color: #fff;font-size: 11px;font-family: Arial, Helvetica, sans-serif;
+    background: #ff6e68;padding: 0px 4px 0px 2px;border-radius: 2px;position: absolute;top: 35px;left: 93px;}
+.user_more ul{padding: 0px 0px 0px 15px;}
+.user_more li{line-height: 28px;position: relative;}
+.user_more a{font-size: 12px;color: #fff;opacity: 0.9;text-decoration: none;}
+.user_more li i{display: inline-block;position: relative;top: 2px;margin-right: 8px;}
+.user_more .cen{width: 15px;height: 15px;background: url(../image/index/usericoAll.png) 0px -59px no-repeat;}
+.user_more ul .cen_hov{width: 15px;height: 15px;background: url(../image/index/usericoAll.png) -21px -59px no-repeat}
+.user_more .new{width: 15px;height: 14px;background: url(../image/index/usericoAll.png) no-repeat;}
+.user_more ul .new_hov{width: 15px;height: 14px;background: url(../image/index/usericoAll.png) -21px 0px no-repeat;}
+.user_more .ord{width: 13px;height: 13px;background: url(../image/index/usericoAll.png) 0px -84px no-repeat;}
+.user_more ul .ord_hov{width: 13px;height: 13px;background: url(../image/index/usericoAll.png) -21px -84px no-repeat}
+.user_more .man{width: 15px;height: 15px;background: url(../image/index/usericoAll.png) 0px -20px no-repeat}
+.user_more ul .man_hov{width: 15px;height: 15px;background: url(../image/index/usericoAll.png) -21px -20px no-repeat}
+.user_more .out{width: 15px;height: 12px;background: url(../image/index/usericoAll.png) 0px -41px no-repeat;}
+.user_more ul .out_hov{width: 15px;height: 12px;background: url(../image/index/usericoAll.png) -21px -41px no-repeat;}
+.footer{
+    width:100%;
+    min-width: 1150px;
+    background: #2F2F2F;
+    padding-bottom:45px;
+    float: left;
+
+}
+.footer ul{
+    width: 900px;
+
+    padding: 60px 0 0;
+    margin: 0 auto;
+
+}
+.footer ul li{
+    float: left;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 0;
+    font-weight: normal
+
+}
+.footer ul li h5{
+    color: #50C8D7;
+    font-size: 15px;
+    padding: 0 0 16px 20px;
+    margin: 0;
+    list-style-type: none;
+    border: 0;
+    font-weight: normal
+}
+.footer ul li h5 em{
+    font-style: italic;
+    font-size: 12px;
+
+}
+.footer ul p{
+    font-size: 14px;
+    line-height: 24px;;
+    margin: 0;
+}
+.footer ul p a{
+    background: url(../image/footer/hf_bg.png) left -19px no-repeat;
+    display: inline-block;
+    padding-left: 20px;
+    color: #818181;
+}
+a{
+    text-decoration: none;
+}
+.sina{
+    background: url(../image/footer/sina_icon.png) left center no-repeat;
+}
+.weixin{
+    background: url(../image/footer/weixin_icon.png) left center no-repeat;
+}
+.footer ul .last a{
+    display: block;
+    padding: 0 0 0 26px;
+    height: 24px;
+    line-height: 24px;
+    color: #818181;
+}
+.footer ul .last img{
+    margin-top: 10px;
+}
+.footer .copyright{
+    display: block;
+    clear: both;
+    text-align: center;
+    color: #818181;
+    font-size: 14px;
+    padding-top: 60px;
+
+}
+.fl{
+    float: left;
+}

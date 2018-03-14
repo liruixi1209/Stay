@@ -1,0 +1,133 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="bbsBodyBg">
+    <div class="commDetails clear">
+        <div class="clear"></div>
+        <div class="fl dd_left borStyle">
+            <!--个人信息-->
+            <div class="person clear">
+                <div class="fl imgBox" id="headImg">
+                    <a href="/user/23436" target="_blank"><img src="/{{content.imgHead}}" class="headImg"></a>
+                </div>
+                <div class="fl person_r">
+                    <h3 class="detailname">{{content.title}}</h3>
+					<span class="detailtime">
+						<a href="/user/23436" target="_blank" class="author">{{content.uname}}</a>
+                        <em><!--发表于-->{{content.p_addTime|date('Y-m-d H:i:s', -8*60)}}</em>
+							<span class="see">浏览 {{content.views}}</span>
+                    </span>
+                </div>
+            </div>
+            <!--详情-->
+            <div class="det_info">
+                <p>{{content.p_contents}}</p>
+            </div>
+            <!--留言-->
+            <div class="comments_box fontSong" id="start_reply">
+                <div class="head">
+                    <div class="talkSty">
+                        <span class="talkIco"></span>
+                        <span id="comment_total">{{content.p_comments}}</span>
+                    </div>
+                    <img src="/public/image/share/title_p_5.png" height="44" width="175">
+                </div>
+                <div class="commentDiv">
+                    <textarea name="comment" id="comment" class="textarea"></textarea>
+                    <input type="hidden" value="" id="comment2">
+                    <div class="button">
+                        <input type="submit" value="发表" id="submit0">
+                    </div>
+                    <ul class="com_liuyanList clear" id="list1">
+                        {%for comment in comments%}
+                        <li class="clear">
+                            <a href="/user/23436">
+                                <img src="/{{comment.imgHead}}" class="fl headImg">
+                            </a>
+                            <div class="fl liuyan_info">
+                                <div class="top clear">
+                                    <div class="fl left">
+                                        <a href="/user/23436" class="liuyanname" target="_blank">
+                                            {{comment.uname}}
+                                        </a>
+                                        <span class="liuyantime">{{comment.addTime|date('Y-m-d H:i', -8*60)}}</span>
+                                    </div>
+                                </div>
+                                <div class="bom">
+                                    <p>{{comment.cmt}}</p>
+                                </div>
+                            </div>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                    <div class="detailpager">
+                        <ul class="clear">
+                            <li class="detailprevious">
+                                <a href="/share/detail?page={{page-1}}&pid={{content.pid}}">上一页</a>
+                            </li>
+                            <li>{{page}}/{{pages}}</li>
+                            <li class="next">
+                                <a href="/share/detail?page={{page+1}}&pid={{content.pid}}">下一页</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(".communityTitle").hover(function(){
+                    $(this).find(".showName").show();
+                },function(){
+                    $(this).find(".showName").hide();
+                });
+            </script>
+            <!--right-->
+            <div class="fl dd_right">
+                <!--加速按钮-->
+                <div class="releaseNew fenxiangBox" style="position: absolute; margin: 132px auto 0px 188px; top: 0px; left: 50%; z-index: 1;">
+                    <a href="/createguide" class="fabu" id="fabu_tiezi"><i></i>发布新帖</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('#submit0').click(function () {
+            var textArea=$('#comment').val();
+            var comments=Number($('#comment_total').html());
+            comments++
+            console.log(comments);
+            $('#comment_total').html(comments);
+            $(this).parents('.commentDiv').find('.textarea').val("").focus();
+            $.ajax({
+                type:"post",
+                url:'/shareComment',
+                data:'cmt='+textArea+'&cpid={{content.pid}}',
+                success: function (msg) {
+                    renderMessage(msg);
+
+                }
+            })
+
+
+        })
+    })
+
+
+    function renderMessage(arr){
+        console.log(arr);
+        var html = "";
+        for(var i=0;i<arr.length;i++){
+            html+='<li class="clear"><a href="/user/23436"><img src="/'+arr[i].imgHead+'" class="fl headImg"></a> <div class="fl liuyan_info">'+
+                    '<div class="top clear"><div class="fl left"><a href="/user/23436" class="liuyanname" target="_blank">'+arr[i].uname+'</a>'+
+                    '<span class="liuyantime">'+formatDate(arr[i].addTime)+'</span></div></div><div class="bom"><p>'+arr[i].cmt+'</p>'+
+                    '</div></div></li>';
+        }
+        $('.com_liuyanList').html(html);
+    }
+    function formatDate(d){
+        var date1 = new Date(d);
+        return date1.getFullYear()+'年'+(date1.getMonth()+1)+'月'+date1.getDate()+'日 '+date1.getHours()+":"+date1.getMinutes()+':'+date1.getSeconds()+":";
+    }
+
+</script>
+{%endblock%}
